@@ -1,0 +1,15 @@
+Warnung zu Resource Limits in VSCode ausschalten:
+
+- Ctrl-Shift-P
+  -> Preferences Open User Settings
+  -> Extensions
+  -> Kubernetes
+  -> Edit settings.json
+  
+In der Konfigurationsdatei den folgenden Text einfügen (bzw. anpassen):
+
+  "vs-kubernetes": {
+    "disable-linters": [
+      "resource-limits"
+    ]
+  }
