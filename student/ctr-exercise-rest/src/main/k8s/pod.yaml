@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ctr-exercise-rest
+spec:
+  containers:
+  - name: ctr-exercise-rest
+    image: seminar/ctr-exercise-rest
+    imagePullPolicy: IfNotPresent
+    ports:
+      - containerPort: 8080
