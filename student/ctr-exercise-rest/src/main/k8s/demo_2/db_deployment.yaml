@@ -28,3 +28,10 @@ spec:
             value: admin
           - name: MYSQL_ROOT_PASSWORD
             value: root
+        volumeMounts:
+          - mountPath: /var/lib/mysql
+            name: db-volume
+      volumes:
+      - name: db-volume
+        persistentVolumeClaim:
+          claimName: exercise-db
