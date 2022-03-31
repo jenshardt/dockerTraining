@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: exercise-app-deployment
+spec:
+  selector:
+    matchLabels:
+      name: exercise-app
+  template:
+    metadata:
+      labels:
+        name: exercise-app
+    spec:
+      containers:
+      - name: exercise-container
+        image: seminar/ctr-exercise-rest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+          name: web
+        env:
+          - name: MYSQL_SERVICE_HOST
+            value: exercise-db
+          - name: MYSQL_SERVICE_PORT
+            value: "3306"
+          - name: MYSQL_DATABASE
+            value: exercise?useSSL=false
+          - name: MYSQL_USER
+            value: admin
+          - name: MYSQL_PASSWORD
+            value: admin
+          - name: DATASOURCE
+            value: MySQLDS

@@ -1,5 +1,5 @@
 #!/bin/sh
-NAMESPACE=gedoplan-seminar
+NAMESPACE=seminar
 REPOSITORY=ctr-exercise-rest
 
 docker build -t $NAMESPACE/$REPOSITORY $@ .

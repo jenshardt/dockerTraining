@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ctr-exercise-rest
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ctr-exercise-rest
+  template:
+    metadata:
+      labels:
+        app: ctr-exercise-rest
+    spec:
+      containers:
+      - name: exercise-rest
+        image: seminar/ctr-exercise-rest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080

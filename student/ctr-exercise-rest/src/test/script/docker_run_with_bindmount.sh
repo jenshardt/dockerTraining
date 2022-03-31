@@ -10,7 +10,7 @@ then
   exit 1
 fi
 
-NAMESPACE=gedoplan-seminar
+NAMESPACE=seminar
 REPOSITORY=ctr-exercise-rest
 
 docker run --name ctr-exercise-rest \

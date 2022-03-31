@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: exercise-db
+spec:
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      name: exercise-db
+  template:
+    metadata:
+      labels:
+        name: exercise-db
+    spec:
+      containers:
+      - image: mysql:8.0.3
+        imagePullPolicy: IfNotPresent
+        name:  mysql
+        ports:
+          - containerPort: 3306
+            name: db
+        env:
+          - name: MYSQL_DATABASE
+            value: exercise
+          - name: MYSQL_USER
+            value: admin
+          - name: MYSQL_PASSWORD
+            value: admin
+          - name: MYSQL_ROOT_PASSWORD
+            value: root

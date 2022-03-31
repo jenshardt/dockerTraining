@@ -7,7 +7,7 @@
       which is the case starting with exercise DOCKER_BASICS_04.
       Please comment out the following line until then (effectively switching to the default datasource). 
       -->
-    <!--<jta-data-source>java:jboss/datasources/${env.DATASOURCE:ExampleDS}</jta-data-source>-->
+    <jta-data-source>java:jboss/datasources/${env.DATASOURCE:ExampleDS}</jta-data-source>
     <properties>
       <property name="eclipselink.ddl-generation" value="create-or-extend-tables" />
       <property name="hibernate.hbm2ddl.auto" value="update" />
