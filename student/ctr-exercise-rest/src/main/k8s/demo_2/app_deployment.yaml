@@ -21,7 +21,7 @@ spec:
           - name: MYSQL_SERVICE_HOST
             value: exercise-db
           - name: MYSQL_SERVICE_PORT
-            value: "30000"
+            value: "3306"
           - name: MYSQL_DATABASE
             value: exercise?useSSL=false
           - name: MYSQL_USER
