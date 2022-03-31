@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: exercise-app-deployment
+  name: exercise-app
 spec:
   selector:
     matchLabels:
@@ -12,17 +12,16 @@ spec:
         name: exercise-app
     spec:
       containers:
-      - name: exercise-container
+      - name: exercise-app
         image: seminar/ctr-exercise-rest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
-          name: web
         env:
           - name: MYSQL_SERVICE_HOST
             value: exercise-db
           - name: MYSQL_SERVICE_PORT
-            value: "3306"
+            value: "30000"
           - name: MYSQL_DATABASE
             value: exercise?useSSL=false
           - name: MYSQL_USER

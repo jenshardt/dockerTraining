@@ -1,4 +1,5 @@
-FROM seminar/ctr-exercise-wildfly
+#FROM seminar/ctr-exercise-wildfly
+FROM semidock.gedoplan.de/gedoplan-seminar/ctr-exercise-wildfly
 
 COPY --chown=jboss:jboss target/ctr-exercise-rest.war /opt/jboss/wildfly/standalone/deployments
 

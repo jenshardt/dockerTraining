@@ -3,8 +3,10 @@ kind: Service
 metadata:
   name: exercise-db
 spec:
+  type: NodePort
   selector:
     name: exercise-db
   ports:
   - port: 3306
-    targetPort: db
+    targetPort: 3306
+    nodePort: 30000
